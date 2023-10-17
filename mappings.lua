@@ -6,6 +6,12 @@
 return {
   -- first key is the mode
   n = {
+    ["<leader>a"] = { "<Cmd>vsplit<CR> <Cmd>split<CR> <Cmd>terminal<CR> <S-Down><S-Down><S-Down><S-Down>", desc = "Open standard layout"},
+    -- mappings seen under group name "Buffer"
+    ["<S-Up>"] = { function() require("smart-splits").resize_up() end, desc = "Resize split up" },
+    ["<S-Down>"] = { function() require("smart-splits").resize_down() end, desc = "Resize split down" },
+    ["<S-Left>"] = { function() require("smart-splits").resize_left() end, desc = "Resize split left" },
+    ["<S-Right>"] = { function() require("smart-splits").resize_right() end, desc = "Resize split right" },
     -- second key is the lefthand side of the map
 
     -- navigate buffer tabs with `H` and `L`
