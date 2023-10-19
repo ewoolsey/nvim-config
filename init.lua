@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "vscode",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -27,7 +27,31 @@ return {
   },
 
   lsp = {
-    -- customize lsp formatting options
+    -- config
+    config = {
+      rust_analyzer = {
+        settings = {
+          ["rust-analyzer"] = {
+            imports = {
+              granularity = {
+                group = "module",
+              },
+              prefix = "self",
+            },
+            checkOnSave = {
+              command = "clippy",
+            },
+            -- cargo = {
+            --   features = {
+            --     "injective",
+            --     "injective_testnet",
+            --   },
+            -- },
+          },
+        },
+      },
+    },
+    -- formatting
     formatting = {
       -- control auto formatting on save
       format_on_save = {
